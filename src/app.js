@@ -59,8 +59,9 @@ app.get("/snack", async (req, res) => {
   console.log(result);
 });
 
-app.get("/lecture", async (req, res) => {
-  res.render("lecture");
+app.get("/lecture", async(req, res) => {
+  const result = await Lecture.find({}, {});
+  res.render("lecture", { dataList: result });
 });
 
 // 설정 끝난 후 Server Start
@@ -69,3 +70,4 @@ app.listen(PORT, () => {
 });
 // home.pug each data in lectureList 설명
 //lectureList가 뭔데? 우리가 database에서 find 한 것을 보여주는데 lectureList는 반복해준다.
+// await = 기다려 

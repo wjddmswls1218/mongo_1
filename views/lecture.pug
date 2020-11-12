@@ -6,4 +6,13 @@ html(lang="en")
         title LECTURE
         link(rel="stylesheet", href="/styles/styles.css")
     body
-        div.wrapper
+        each data in dataList
+            div.wrapper
+                div.dataBox 
+                    div.dataBox__top 
+                        span #{data.name}
+                    div.dataBox__bottom
+                        .dataBox__bottom__left
+                            span #{data.teacher}
+                        .dataBox__bottom__right
+                            span #{data.pay}
